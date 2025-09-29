@@ -1,0 +1,25 @@
+.hero-image-wrapper {
+  perspective: 1000px; /* Enables 3D rotation */
+}
+
+.hero-image {
+  transform: rotateX(15deg) scale(1); /* Rotate top-to-bottom */
+  transition: transform 0.5s ease-out;
+  will-change: transform;
+}
+
+.hero-image.scrolled {
+  transform: rotateX(0deg) scale(1) translateY(40px);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #1963db, #662dea); /* blue to purple */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* For better browser support */
+  background-clip: text;
+  color: transparent;
+  
+  font-weight: 700;
+}
