@@ -1,13 +1,18 @@
 "use client";
 
-import React, { useState } from 'react'
-import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from './ui/drawer';
+import React, { useEffect, useState } from 'react'
+import { Drawer, DrawerClose, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from './ui/drawer';
 import { useForm } from 'react-hook-form';
 import {zodResolver} from "@hookform/resolvers/zod";
 import { accountSchema } from '@/app/lib/schema';
 import { Input } from './ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Switch } from './ui/switch';
+import { Button } from './ui/button';
+import useFetch from '@/hooks/use-fetch';
+import { createAccount } from '@/actions/dashboard';
+import { Loader2 } from 'lucide-react';
+import { toast } from 'sonner';
 
 function CreateAccountDrawer({children}) {
  const[open, setOpen] = useState(false);
@@ -20,7 +25,7 @@ function CreateAccountDrawer({children}) {
      watch,
      reset,
     } = useForm({
-    Resolver:zodResolver(accountSchema),
+    resolver:zodResolver(accountSchema),
     defaultValues: {
       name: "",
       type: "CURRENT",
@@ -28,6 +33,34 @@ function CreateAccountDrawer({children}) {
       isDefault: false,
     },
  });
+
+
+ const{
+  data : newAccount,
+  error,
+  fn:createAccountFn,
+  loading:createAccountLoading,
+}= useFetch(createAccount);
+
+useEffect(()=>{
+  if(newAccount && !createAccountLoading){
+    toast.success("Account created successfully...");
+    reset();
+    setOpen(false);
+  }
+},[createAccountLoading, newAccount])
+
+useEffect(()=>{
+  if(error){
+    toast.error(error.message || "Failed to create Account...")
+  }
+},[error]);
+
+
+
+    const onSubmit = async (data)=> {
+     await createAccountFn(data);
+     };
 
   return (
  <Drawer open={open} onOpenChange={setOpen}>
@@ -37,7 +70,7 @@ function CreateAccountDrawer({children}) {
       <DrawerTitle>Create New Account</DrawerTitle>
     </DrawerHeader>
     <div className='px-4 pb-4'>
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
 
             <div className='space-y-2'>
                 <label
@@ -69,7 +102,7 @@ function CreateAccountDrawer({children}) {
                 </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="CURRENT">CURRENT</SelectItem>
-                    <SelectItem value="SAVING">SAVING</SelectItem>
+                    <SelectItem value="SAVINGS">SAVINGS</SelectItem>
                   </SelectContent>
              </Select>
               {errors.type && (
@@ -96,7 +129,7 @@ function CreateAccountDrawer({children}) {
             </div>
 
             <div className='flex items-center justify-between rounded-lg border p-3'>
-                <div>
+                <div className='space-y-0.5'>
                 <label
                 htmlFor="isDefault"
                 className="text-sm font-medium cursor-pointer" 
@@ -108,11 +141,34 @@ function CreateAccountDrawer({children}) {
               </div>
               <Switch
               id='isDefault'
-              onCheckedChange={(checked)=>setValue("isDefault",value)}
+              onCheckedChange={(checked)=>setValue("isDefault",checked)}
               checked={watch("isDefault")}/>
                 
-              
             </div>
+
+            <div className='flex gap-4 pt-4'>
+              <DrawerClose asChild>
+                <Button type='button' variant="outline" className="flex-1">
+                  Cancel
+                </Button>
+              </DrawerClose>
+           
+            <Button
+                type="submit"
+                className="flex-1"
+                disabled={createAccountLoading}
+              >
+                {createAccountLoading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Creating...
+                  </>
+                ) : (
+                  "Create Account"
+                )}
+              </Button>
+           </div>
+
 
         </form>
     </div>
