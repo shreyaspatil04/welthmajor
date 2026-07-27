@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         {/* footer*/}
         <footer className="bg-blue-50 py-12">
           <div className="container mx-auto px-4 text-center text-gray-600">
-          <p>This is Final year project by shreyas</p>
+          <p>This is Final year project by Group No.12</p>
           </div>
          </footer>
       </body>

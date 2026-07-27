@@ -22,8 +22,8 @@ import { Resend } from "resend";
 export async function sendEmail({ to, subject, react }) {
   const resend = new Resend(process.env.RESEND_API_KEY || "");
 
-  // // ✅ Force sending only to your verified email during testing
-  // const verifiedEmail = "shreyaspatil222@nhitm.ac.in";
+  
+   const verifiedEmail = "shreyaspatil222@nhitm.ac.in";
 
   try {
     console.log("🔑 RESEND_API_KEY Loaded:", !!process.env.RESEND_API_KEY);
@@ -31,21 +31,21 @@ export async function sendEmail({ to, subject, react }) {
 
     const { data, error } = await resend.emails.send({
       from: "Finance App <onboarding@resend.dev>",
-      // to: verifiedEmail, // ✅ Use your verified email only
-      to,
+       to: verifiedEmail, 
+      // to,
       subject,
       react,
     });
 
     if (error) {
-      console.error("❌ Failed to send email:", error);
+      console.error(" Failed to send email:", error);
       return { success: false, error };
     }
 
-    console.log("✅ Email sent successfully:", data);
+    console.log(" Email sent successfully:", data);
     return { success: true, data };
   } catch (err) {
-    console.error("🔥 Unexpected error while sending email:", err);
+    console.error(" Unexpected error while sending email:", err);
     return { success: false, error: err };
   }
 }
