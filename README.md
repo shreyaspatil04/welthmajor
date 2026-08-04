@@ -1,40 +1,238 @@
+# 💰 WealthAI — AI-Powered Personal Finance Management System
 
-// Video link of this project....
-https://youtu.be/vA-XpkQQMiE
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-15-black?logo=next.js">
+  <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react">
+  <img src="https://img.shields.io/badge/Prisma-2D3748?logo=prisma">
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql">
+  <img src="https://img.shields.io/badge/Clerk-Authentication-blue">
+  <img src="https://img.shields.io/badge/Google-Gemini-orange">
+  <img src="https://img.shields.io/badge/License-MIT-green">
+</p>
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+An AI-powered personal finance management platform that helps users track income, expenses, budgets, recurring transactions, and financial insights through an intelligent dashboard.
 
-## Getting Started
+Developed as a Final Year B.E. Computer Engineering Major Project and accompanied by a published research paper in the International Research Journal of Modernization in Engineering Technology and Science (IRJMETS). :contentReference[oaicite:0]{index=0}
 
-First, run the development server:
+---
+
+## ✨ Features
+
+### 🤖 AI-Powered Finance Assistant
+
+- AI-generated financial insights
+- Personalized spending analysis
+- Budget recommendations
+- Expense categorization
+- Receipt scanning support (OCR-based)
+
+### 💳 Expense & Income Management
+
+- Add income and expenses
+- Categorize transactions
+- Track recurring transactions
+- Monthly financial summaries
+
+### 📊 Interactive Dashboard
+
+- Spending analytics
+- Income vs Expense visualization
+- Budget tracking
+- Financial reports
+- Charts using Recharts
+
+### 🔐 Authentication & Security
+
+- Clerk Authentication
+- Protected routes
+- Secure user sessions
+- API protection
+- Rate limiting using Arcjet
+
+### 📧 Automation
+
+- Scheduled financial reports
+- Email notifications
+- Automated reminders
+- Background jobs powered by Inngest
+
+---
+
+# 🛠 Tech Stack
+
+### Frontend
+
+- Next.js 15
+- React 19
+- Tailwind CSS
+- shadcn/ui
+- Radix UI
+- Recharts
+
+### Backend
+
+- Next.js Server Actions
+- Prisma ORM
+- PostgreSQL
+- Clerk Authentication
+
+### AI
+
+- Google Gemini API
+
+### Email
+
+- Resend
+- React Email
+
+### Security
+
+- Clerk Authentication
+- Arcjet
+- Middleware Protection
+
+### Deployment
+
+- Vercel
+- Supabase PostgreSQL
+
+---
+
+# 📂 Project Structure
+
+```
+app/
+components/
+actions/
+prisma/
+lib/
+hooks/
+public/
+emails/
+```
+
+---
+
+# 🚀 Getting Started
+
+## Clone the repository
+
+```bash
+git clone https://github.com/shravanij22/welthmajor.git
+cd welthmajor
+```
+
+## Install dependencies
+
+```bash
+npm install
+```
+
+## Configure Environment Variables
+
+Create a `.env` file.
+
+```env
+DATABASE_URL=
+
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+SUPABASE_URL=
+SUPABASE_PUBLISHABLE_KEY=
+SUPABASE_SECRET_KEY=
+
+GOOGLE_API_KEY=
+
+RESEND_API_KEY=
+
+ARCJET_KEY=
+```
+
+## Generate Prisma Client
+
+```bash
+npx prisma generate
+```
+
+## Push Database Schema
+
+```bash
+npx prisma db push
+```
+
+## Run locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+# 📸 Screenshots
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+> Add screenshots here.
 
-## Learn More
+Suggested screenshots:
 
-To learn more about Next.js, take a look at the following resources:
+- Landing Page
+- Dashboard
+- Expense Tracker
+- Budget Planner
+- Analytics
+- AI Insights
+- Profile
+- Reports
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# 🧠 System Architecture
 
-## Deploy on Vercel
+The application follows a three-layer architecture:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Presentation Layer (Next.js)
+- Business Logic Layer (Server Actions)
+- Data Layer (PostgreSQL + Prisma)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+It integrates authentication, AI-powered analytics, automated reporting, and secure cloud-based data management into a unified platform. :contentReference[oaicite:1]{index=1}
+
+---
+
+# 📖 Research Publication
+
+This project was published as:
+
+**"WealthAI: An Intelligent AI-Driven Personal Finance Management System for Smart Financial Decision-Making"**
+
+Published in:
+
+**International Research Journal of Modernization in Engineering Technology and Science (IRJMETS)**
+
+Volume 08 • Issue 03 • March 2026 :contentReference[oaicite:2]{index=2}
+
+---
+
+# 🔮 Future Improvements
+
+- Mobile application
+- Bank account integration
+- Investment portfolio tracking
+- Predictive spending analysis
+- Voice assistant
+- Multi-currency support
+- AI financial planning
+- Export reports as PDF
+
+---
+
+# 👩‍💻 Author
+
+**Shravani Sanjeev Jadhav**
+
+Computer Engineering Graduate
+
+- GitHub: https://github.com/shravanij22
+- LinkedIn: https://www.linkedin.com/in/shravani-jadhav-44b58a284/
+---
+
+## ⭐ If you found this project interesting, consider giving it a star!
