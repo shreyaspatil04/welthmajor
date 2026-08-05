@@ -1,136 +1,189 @@
-# 💰 WealthAI — AI-Powered Personal Finance Management System
+# 💰 Welth – AI-Powered Personal Finance Management Platform
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Next.js-15-black?logo=next.js">
-  <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react">
-  <img src="https://img.shields.io/badge/Prisma-2D3748?logo=prisma">
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql">
-  <img src="https://img.shields.io/badge/Clerk-Authentication-blue">
-  <img src="https://img.shields.io/badge/Google-Gemini-orange">
-  <img src="https://img.shields.io/badge/License-MIT-green">
+
+![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma)
+![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?logo=supabase)
+![Clerk](https://img.shields.io/badge/Authentication-Clerk-6C47FF)
+![Google Gemini](https://img.shields.io/badge/AI-Google_Gemini-4285F4)
+![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?logo=vercel)
+
 </p>
 
-An AI-powered personal finance management platform that helps users track income, expenses, budgets, recurring transactions, and financial insights through an intelligent dashboard.
+---
 
-Developed as a Final Year B.E. Computer Engineering Major Project and accompanied by a published research paper in the International Research Journal of Modernization in Engineering Technology and Science (IRJMETS). :contentReference[oaicite:0]{index=0}
+## 🌐 Live Demo
+
+**🔗 Live Application:**  
+https://welthmajor-seven.vercel.app/
+
+**💻 GitHub Repository:**  
+https://github.com/shravanij22/welthmajor
 
 ---
 
-## ✨ Features
+# 📖 Overview
 
-### 🤖 AI-Powered Finance Assistant
+Welth is an AI-powered personal finance management platform designed to help users efficiently manage their finances through intelligent budgeting, expense tracking, recurring transaction automation, and AI-generated financial insights.
 
-- AI-generated financial insights
-- Personalized spending analysis
-- Budget recommendations
-- Expense categorization
-- Receipt scanning support (OCR-based)
+Built as my **Final Year Major Project** for the Bachelor of Engineering in Computer Engineering, the platform combines modern full-stack web development with Artificial Intelligence to simplify personal financial management.
 
-### 💳 Expense & Income Management
+The project emphasizes secure authentication, scalable architecture, responsive design, and intelligent automation while delivering a clean and intuitive user experience.
 
+---
+
+# ✨ Features
+
+### 🔐 Secure Authentication
+- User authentication using Clerk
+- Protected routes
+- Secure session management
+
+### 💳 Financial Account Management
+- Create multiple accounts
+- Track account balances
+- Manage account information
+
+### 💸 Transaction Management
 - Add income and expenses
 - Categorize transactions
-- Track recurring transactions
-- Monthly financial summaries
+- Track spending history
+- Create recurring transactions
 
-### 📊 Interactive Dashboard
-
-- Spending analytics
+### 📊 Analytics Dashboard
+- Interactive charts
+- Spending analysis
+- Monthly financial overview
 - Income vs Expense visualization
-- Budget tracking
-- Financial reports
-- Charts using Recharts
 
-### 🔐 Authentication & Security
+### 🤖 AI Financial Insights
+Powered by **Google Gemini AI**
 
-- Clerk Authentication
-- Protected routes
-- Secure user sessions
-- API protection
-- Rate limiting using Arcjet
+- Personalized financial recommendations
+- Monthly financial summaries
+- Intelligent spending analysis
+- AI-generated reports
 
-### 📧 Automation
+### 📅 Recurring Transactions
+- Automatic recurring entries
+- Scheduled transaction processing
+- Monthly automation
 
-- Scheduled financial reports
+### 📧 Email Reports
+- Automated monthly financial reports
 - Email notifications
-- Automated reminders
-- Background jobs powered by Inngest
+- Financial summaries
+
+### ☁️ Production Deployment
+- Hosted on Vercel
+- PostgreSQL database using Supabase
+- Production-ready architecture
 
 ---
 
-# 🛠 Tech Stack
+# 🛠️ Tech Stack
 
-### Frontend
+## Frontend
 
 - Next.js 15
 - React 19
 - Tailwind CSS
-- shadcn/ui
 - Radix UI
 - Recharts
 
-### Backend
+## Backend
 
 - Next.js Server Actions
 - Prisma ORM
-- PostgreSQL
+- PostgreSQL (Supabase)
+
+## Authentication
+
 - Clerk Authentication
 
-### AI
+## Artificial Intelligence
 
 - Google Gemini API
 
-### Email
+## Background Jobs
 
-- Resend
+- Inngest
+
+## Email
+
 - React Email
+- Resend
 
-### Security
-
-- Clerk Authentication
-- Arcjet
-- Middleware Protection
-
-### Deployment
+## Deployment
 
 - Vercel
-- Supabase PostgreSQL
 
 ---
 
-# 📂 Project Structure
+# 🏗️ System Architecture
 
 ```
-app/
-components/
-actions/
-prisma/
-lib/
-hooks/
-public/
-emails/
+                User
+                  │
+                  ▼
+           Next.js Application
+                  │
+        ┌─────────┼─────────┐
+        │         │         │
+        ▼         ▼         ▼
+     Clerk     Prisma     Gemini AI
+ Authentication   ORM        API
+        │         │
+        ▼         ▼
+     Supabase PostgreSQL
+        │
+        ▼
+     Financial Data
 ```
 
 ---
 
-# 🚀 Getting Started
+# 📷 Application Screenshots
 
-## Clone the repository
+> *(Add screenshots of your application here.)*
+
+Suggested screenshots:
+
+- Landing Page
+- Dashboard
+- Account Management
+- Transaction Creation
+- Analytics Dashboard
+- AI Insights
+- Monthly Reports
+
+---
+
+# 🚀 Installation
+
+Clone the repository
 
 ```bash
 git clone https://github.com/shravanij22/welthmajor.git
+```
+
+Navigate to the project directory
+
+```bash
 cd welthmajor
 ```
 
-## Install dependencies
+Install dependencies
 
 ```bash
 npm install
 ```
 
-## Configure Environment Variables
+Configure environment variables
 
-Create a `.env` file.
+Create a `.env` file and add:
 
 ```env
 DATABASE_URL=
@@ -138,101 +191,141 @@ DATABASE_URL=
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
 CLERK_SECRET_KEY=
 
+GEMINI_API_KEY=
+
 SUPABASE_URL=
 SUPABASE_PUBLISHABLE_KEY=
 SUPABASE_SECRET_KEY=
 
-GOOGLE_API_KEY=
-
 RESEND_API_KEY=
-
-ARCJET_KEY=
 ```
 
-## Generate Prisma Client
+Generate Prisma Client
 
 ```bash
 npx prisma generate
 ```
 
-## Push Database Schema
+Run Prisma migrations
 
 ```bash
 npx prisma db push
 ```
 
-## Run locally
+Start the development server
 
 ```bash
 npm run dev
 ```
 
----
+Open
 
-# 📸 Screenshots
-
-> Add screenshots here.
-
-Suggested screenshots:
-
-- Landing Page
-- Dashboard
-- Expense Tracker
-- Budget Planner
-- Analytics
-- AI Insights
-- Profile
-- Reports
+```
+http://localhost:3000
+```
 
 ---
 
-# 🧠 System Architecture
+# 📂 Project Structure
 
-The application follows a three-layer architecture:
-
-- Presentation Layer (Next.js)
-- Business Logic Layer (Server Actions)
-- Data Layer (PostgreSQL + Prisma)
-
-It integrates authentication, AI-powered analytics, automated reporting, and secure cloud-based data management into a unified platform. :contentReference[oaicite:1]{index=1}
-
----
-
-# 📖 Research Publication
-
-This project was published as:
-
-**"WealthAI: An Intelligent AI-Driven Personal Finance Management System for Smart Financial Decision-Making"**
-
-Published in:
-
-**International Research Journal of Modernization in Engineering Technology and Science (IRJMETS)**
-
-Volume 08 • Issue 03 • March 2026 :contentReference[oaicite:2]{index=2}
+```
+welthmajor
+│
+├── app
+├── actions
+├── components
+├── lib
+├── prisma
+├── public
+├── hooks
+├── emails
+├── middleware.js
+├── package.json
+└── README.md
+```
 
 ---
 
-# 🔮 Future Improvements
+# 💡 Key Highlights
 
-- Mobile application
-- Bank account integration
+- Full Stack Development
+- AI Integration
+- Responsive User Interface
+- Secure Authentication
+- PostgreSQL Database
+- ORM with Prisma
+- Server Actions
+- Financial Analytics
+- Background Job Processing
+- Production Deployment
+
+---
+
+# 📚 Research Publication
+
+This project was developed as my **Final Year Major Project** and was also published as a research paper.
+
+**Title:**
+> *AI-Powered Personal Finance Management Platform (Welth)*
+
+📄 **Research Paper:** *(Add your paper link here)*
+
+---
+
+# 🎯 Learning Outcomes
+
+Through this project, I gained practical experience in:
+
+- Building production-ready full-stack applications
+- Database design and management
+- AI integration using Large Language Models
+- Authentication and authorization
+- Server-side rendering
+- Background job scheduling
+- API development
+- Modern React architecture
+- Cloud deployment
+- Secure software development practices
+
+---
+
+# 📈 Future Improvements
+
 - Investment portfolio tracking
-- Predictive spending analysis
-- Voice assistant
+- UPI and Bank API integration
+- OCR receipt scanning
+- Voice-based expense logging
+- Mobile application
 - Multi-currency support
-- AI financial planning
-- Export reports as PDF
+- Advanced AI financial advisor
+- Budget prediction using Machine Learning
 
 ---
 
 # 👩‍💻 Author
 
-**Shravani Sanjeev Jadhav**
+**Shravani Jadhav**
 
 Computer Engineering Graduate
 
-- GitHub: https://github.com/shravanij22
-- LinkedIn: https://www.linkedin.com/in/shravani-jadhav-44b58a284/
+📧 Email: *(Add your email)*
+
+🔗 GitHub:
+https://github.com/shravanij22
+
+🔗 LinkedIn:
+*(Add your LinkedIn URL)*
+
 ---
 
-## ⭐ If you found this project interesting, consider giving it a star!
+# ⭐ Support
+
+If you found this project helpful, consider giving it a ⭐ on GitHub!
+
+---
+
+## License
+
+This project is developed for educational and portfolio purposes.
+
+© 2026 Shravani Jadhav
