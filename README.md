@@ -147,7 +147,7 @@ Powered by **Google Gemini AI**
 
 # 📷 Application Screenshots
 
-> *(Add screenshots of your application here.)*
+<img width="1918" height="868" alt="image" src="https://github.com/user-attachments/assets/be650453-42c3-4f20-949d-b3856569a190" />
 
 Suggested screenshots:
 
@@ -308,13 +308,13 @@ Through this project, I gained practical experience in:
 
 Computer Engineering Graduate
 
-📧 Email: *(Add your email)*
+📧 Email: shravani.jadhav2210@gmail.com
 
 🔗 GitHub:
 https://github.com/shravanij22
 
 🔗 LinkedIn:
-*(Add your LinkedIn URL)*
+https://www.linkedin.com/in/shravani-jadhav-44b58a284/
 
 ---
 
