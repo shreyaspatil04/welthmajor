@@ -1,40 +1,331 @@
+# 💰 Welth – AI-Powered Personal Finance Management Platform
 
-// Video link of this project....
-https://youtu.be/vA-XpkQQMiE
+<p align="center">
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma)
+![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?logo=supabase)
+![Clerk](https://img.shields.io/badge/Authentication-Clerk-6C47FF)
+![Google Gemini](https://img.shields.io/badge/AI-Google_Gemini-4285F4)
+![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?logo=vercel)
 
-## Getting Started
+</p>
 
-First, run the development server:
+---
+
+## 🌐 Live Demo
+
+**🔗 Live Application:**  
+https://welthmajor-seven.vercel.app/
+
+**💻 GitHub Repository:**  
+https://github.com/shravanij22/welthmajor
+
+---
+
+# 📖 Overview
+
+Welth is an AI-powered personal finance management platform designed to help users efficiently manage their finances through intelligent budgeting, expense tracking, recurring transaction automation, and AI-generated financial insights.
+
+Built as my **Final Year Major Project** for the Bachelor of Engineering in Computer Engineering, the platform combines modern full-stack web development with Artificial Intelligence to simplify personal financial management.
+
+The project emphasizes secure authentication, scalable architecture, responsive design, and intelligent automation while delivering a clean and intuitive user experience.
+
+---
+
+# ✨ Features
+
+### 🔐 Secure Authentication
+- User authentication using Clerk
+- Protected routes
+- Secure session management
+
+### 💳 Financial Account Management
+- Create multiple accounts
+- Track account balances
+- Manage account information
+
+### 💸 Transaction Management
+- Add income and expenses
+- Categorize transactions
+- Track spending history
+- Create recurring transactions
+
+### 📊 Analytics Dashboard
+- Interactive charts
+- Spending analysis
+- Monthly financial overview
+- Income vs Expense visualization
+
+### 🤖 AI Financial Insights
+Powered by **Google Gemini AI**
+
+- Personalized financial recommendations
+- Monthly financial summaries
+- Intelligent spending analysis
+- AI-generated reports
+
+### 📅 Recurring Transactions
+- Automatic recurring entries
+- Scheduled transaction processing
+- Monthly automation
+
+### 📧 Email Reports
+- Automated monthly financial reports
+- Email notifications
+- Financial summaries
+
+### ☁️ Production Deployment
+- Hosted on Vercel
+- PostgreSQL database using Supabase
+- Production-ready architecture
+
+---
+
+# 🛠️ Tech Stack
+
+## Frontend
+
+- Next.js 15
+- React 19
+- Tailwind CSS
+- Radix UI
+- Recharts
+
+## Backend
+
+- Next.js Server Actions
+- Prisma ORM
+- PostgreSQL (Supabase)
+
+## Authentication
+
+- Clerk Authentication
+
+## Artificial Intelligence
+
+- Google Gemini API
+
+## Background Jobs
+
+- Inngest
+
+## Email
+
+- React Email
+- Resend
+
+## Deployment
+
+- Vercel
+
+---
+
+# 🏗️ System Architecture
+
+```
+                User
+                  │
+                  ▼
+           Next.js Application
+                  │
+        ┌─────────┼─────────┐
+        │         │         │
+        ▼         ▼         ▼
+     Clerk     Prisma     Gemini AI
+ Authentication   ORM        API
+        │         │
+        ▼         ▼
+     Supabase PostgreSQL
+        │
+        ▼
+     Financial Data
+```
+
+---
+
+# 📷 Application Screenshots
+
+<img width="1918" height="868" alt="image" src="https://github.com/user-attachments/assets/be650453-42c3-4f20-949d-b3856569a190" />
+
+Suggested screenshots:
+
+- Landing Page
+- Dashboard
+- Account Management
+- Transaction Creation
+- Analytics Dashboard
+- AI Insights
+- Monthly Reports
+
+---
+
+# 🚀 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/shravanij22/welthmajor.git
+```
+
+Navigate to the project directory
+
+```bash
+cd welthmajor
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Configure environment variables
+
+Create a `.env` file and add:
+
+```env
+DATABASE_URL=
+
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+GEMINI_API_KEY=
+
+SUPABASE_URL=
+SUPABASE_PUBLISHABLE_KEY=
+SUPABASE_SECRET_KEY=
+
+RESEND_API_KEY=
+```
+
+Generate Prisma Client
+
+```bash
+npx prisma generate
+```
+
+Run Prisma migrations
+
+```bash
+npx prisma db push
+```
+
+Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# 📂 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+welthmajor
+│
+├── app
+├── actions
+├── components
+├── lib
+├── prisma
+├── public
+├── hooks
+├── emails
+├── middleware.js
+├── package.json
+└── README.md
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# 💡 Key Highlights
 
-## Deploy on Vercel
+- Full Stack Development
+- AI Integration
+- Responsive User Interface
+- Secure Authentication
+- PostgreSQL Database
+- ORM with Prisma
+- Server Actions
+- Financial Analytics
+- Background Job Processing
+- Production Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 📚 Research Publication
+
+This project was developed as my **Final Year Major Project** and was also published as a research paper.
+
+**Title:**
+> *AI-Powered Personal Finance Management Platform (Welth)*
+
+📄 **Research Paper:** *(Add your paper link here)*
+
+---
+
+# 🎯 Learning Outcomes
+
+Through this project, I gained practical experience in:
+
+- Building production-ready full-stack applications
+- Database design and management
+- AI integration using Large Language Models
+- Authentication and authorization
+- Server-side rendering
+- Background job scheduling
+- API development
+- Modern React architecture
+- Cloud deployment
+- Secure software development practices
+
+---
+
+# 📈 Future Improvements
+
+- Investment portfolio tracking
+- UPI and Bank API integration
+- OCR receipt scanning
+- Voice-based expense logging
+- Mobile application
+- Multi-currency support
+- Advanced AI financial advisor
+- Budget prediction using Machine Learning
+
+---
+
+# 👩‍💻 Author
+
+**Shravani Jadhav**
+
+Computer Engineering Graduate
+
+📧 Email: shravani.jadhav2210@gmail.com
+
+🔗 GitHub:
+https://github.com/shravanij22
+
+🔗 LinkedIn:
+https://www.linkedin.com/in/shravani-jadhav-44b58a284/
+
+---
+
+# ⭐ Support
+
+If you found this project helpful, consider giving it a ⭐ on GitHub!
+
+---
+
+## License
+
+This project is developed for educational and portfolio purposes.
+
+© 2026 Shravani Jadhav
